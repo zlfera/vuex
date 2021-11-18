@@ -1,4 +1,4 @@
-import { IRootState } from "@/typings";
+import { IRootState } from "@/store/interface";
 import { Module } from "vuex";
 import actions from "./actions";
 import UserModuleTypes from "./interface";
