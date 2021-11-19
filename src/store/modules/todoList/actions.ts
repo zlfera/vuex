@@ -1,6 +1,6 @@
 import { IState, ITodo } from "@/store/modules/todoList/interface";
 import { Commit } from "vuex";
-import { SET_TODO } from "./actionTypes";
+import { SET_TODO } from "./mutationsTypes";
 interface ICtx {
     commit: Commit;
     state: IState;

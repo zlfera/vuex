@@ -1,4 +1,4 @@
-import { SET_TODO } from "../store/modules/todoList/actionTypes";
+import { SET_TODO } from "../store/modules/todoList/mutationsTypes";
 import { IState, ITodo } from "@/store/modules/todoList/interface";
 import { TODO_STATUS } from "@/store/modules/todoList/interface";
 

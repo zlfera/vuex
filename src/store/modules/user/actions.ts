@@ -1,7 +1,6 @@
 import { Commit } from "vuex";
-
-import { SET_TODO } from "./actionTypes";
 import UserModuleTypes from "./interface";
+import { SET_TODO } from "./mutationsTypes";
 
 interface ICtx {
     commit: Commit;
