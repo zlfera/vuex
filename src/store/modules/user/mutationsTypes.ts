@@ -1,4 +1,4 @@
 //export default SET_TODOz;
-export enum MutationTypes {
+export enum MutationsTypes {
     setTodo = "setTodo",
 }

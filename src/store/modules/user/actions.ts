@@ -1,13 +1,13 @@
 import { Commit } from "vuex";
 import UserModuleTypes from "./interface";
-import { MutationTypes } from "./mutationsTypes";
+import { MutationsTypes } from "./mutationsTypes";
 
 interface ICtx {
     commit: Commit;
     state: UserModuleTypes;
 }
 export default {
-    [MutationTypes.setTodo]({ commit }: ICtx, payload: UserModuleTypes): void {
-        commit(MutationTypes.setTodo, payload);
+    [MutationsTypes.setTodo]({ commit }: ICtx, payload: UserModuleTypes): void {
+        commit(MutationsTypes.setTodo, payload);
     },
 };

@@ -1,8 +1,8 @@
-import { MutationTypes } from "./mutationsTypes";
+import { MutationsTypes } from "./mutationsTypes";
 import UserModuleTypes from "./interface";
 
 export default {
-    [MutationTypes.setTodo](
+    [MutationsTypes.setTodo](
         state: UserModuleTypes,
         payload: UserModuleTypes
     ): void {
