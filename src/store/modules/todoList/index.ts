@@ -6,6 +6,8 @@ import mutations from "./mutations";
 import state from "./state";
 
 const todoModule: Module<IState, IRootState> = {
+    //namespaced: true,
+    namespaced: process.env.NODE_ENV !== "production",
     state,
     mutations,
     actions,

@@ -1,5 +1,5 @@
 import { SET_TODO } from "../store/modules/todoList/actionTypes";
-import { ITodo } from "@/store/modules/todoList/interface";
+import { IState, ITodo } from "@/store/modules/todoList/interface";
 import { TODO_STATUS } from "@/store/modules/todoList/interface";
 
 import { useStore } from "@/store";
@@ -19,9 +19,9 @@ function useTodo(): IUseTodo {
             content: value,
             status: TODO_STATUS.WILLDO,
         };
-        store.dispatch(SET_TODO, todo);
-
         console.log(store);
+
+        store.dispatch(`todoModule/${SET_TODO}`, todo);
     }
     function setTodoList(): void {}
     function removeTodo(): void {}

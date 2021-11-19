@@ -1,11 +1,9 @@
-import { IRootState } from "@/store/interface";
-
 interface ITodo {
     id: number;
     content: string;
     status: TODO_STATUS;
 }
-interface IState extends IRootState {
+interface IState {
     list: ITodo[];
 }
 enum TODO_STATUS {
