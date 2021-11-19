@@ -1,8 +1,8 @@
-import { SET_TODO } from "../store/modules/todoList/mutationsTypes";
-import { IState, ITodo } from "@/store/modules/todoList/interface";
+import { ITodo } from "@/store/modules/todoList/interface";
 import { TODO_STATUS } from "@/store/modules/todoList/interface";
 
 import { useStore } from "@/store";
+import { MutationTypes } from "@/store/modules/todoList/mutationsTypes";
 export interface IUseTodo {
     setTodo: (value: string) => void;
     setTodoList: () => void;
@@ -21,7 +21,7 @@ function useTodo(): IUseTodo {
         };
         console.log(store);
 
-        store.dispatch(`todoModule/${SET_TODO}`, todo);
+        store.dispatch(`todoModule/${MutationTypes.setTodo}`, todo);
     }
     function setTodoList(): void {}
     function removeTodo(): void {}

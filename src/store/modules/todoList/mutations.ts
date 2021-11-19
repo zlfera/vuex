@@ -1,7 +1,8 @@
 import { IState, ITodo } from "@/store/modules/todoList/interface";
-import { SET_TODO } from "./mutationsTypes";
+import { MutationTypes } from "./mutationsTypes";
+
 export default {
-    [SET_TODO](state: IState, payload: ITodo): void {
+    [MutationTypes.setTodo](state: IState, payload: ITodo): void {
         state.list.unshift(payload);
         console.log(state.list);
     },
