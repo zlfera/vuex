@@ -19,7 +19,6 @@ function useTodo(): IUseTodo {
             content: value,
             status: TODO_STATUS.WILLDO,
         };
-        console.log(store);
 
         store.dispatch(`todoModule/${MutationsTypes.setTodo}`, todo);
     }
