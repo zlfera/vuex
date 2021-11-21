@@ -10,4 +10,14 @@ export default {
     [MutationsTypes.setTodo]({ commit }: ICtx, payload: ITodo): void {
         commit(MutationsTypes.setTodo, payload);
     },
+    [MutationsTypes.setTodoList]({ commit }: ICtx, payload: ITodo[]): void {
+        commit(MutationsTypes.setTodoList, payload);
+    },
+    [MutationsTypes.removeTodo]({ commit }: ICtx, payload: number): void {
+        commit(MutationsTypes.removeTodo, payload);
+    },
+    [MutationsTypes.setStatus]({ commit }: ICtx, payload: number): void {
+        // payload: boolean
+        commit(MutationsTypes.setStatus, payload);
+    },
 };
