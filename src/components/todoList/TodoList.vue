@@ -15,12 +15,9 @@
 <script setup lang="ts">
 import { IUseTodo, useTodo } from "@/hooks";
 import { ITodo } from "@/store/modules/todoList/interface";
-import { PropType } from "vue";
 
 import TodoItem from "./TodoItem.vue";
 const { removeTodo, setStatus, setDoing }: IUseTodo = useTodo();
-defineProps({
-  todoList: Array as PropType<ITodo[]>,
-});
+defineProps<{ todoList: ITodo[] }>();
 </script>
 <style scoped></style>

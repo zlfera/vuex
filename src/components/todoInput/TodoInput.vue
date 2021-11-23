@@ -8,7 +8,7 @@
 </template>
 <script lang="ts" setup>
 import { ITodo } from "@/store/modules/todoList/interface";
-import { PropType, ref } from "vue";
+import { ref } from "vue";
 
 import { IUseTodo, useTodo } from "../../hooks";
 import TodoList from "../todoList/TodoList.vue";
@@ -21,7 +21,8 @@ const setTodoValue = (e: KeyboardEvent) => {
     todoValue.value = "";
   }
 };
-defineProps({ todoList: Array as PropType<ITodo[]> });
+defineProps<{ todoList: ITodo[] }>();
+//defineProps({ todoList: Array as PropType<ITodo[]> });
 // // return {
 //   todoValue,
 //   SetTodoValue,

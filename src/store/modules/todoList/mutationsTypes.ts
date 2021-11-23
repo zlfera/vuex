@@ -3,4 +3,5 @@ export enum MutationsTypes {
     setTodoList = "setTodoList",
     removeTodo = "removeTodo",
     setStatus = "setStatus",
+    setDoing = "setDoing",
 }

@@ -42,7 +42,9 @@ function useTodo(): IUseTodo {
         store.dispatch(`todoModule/${MutationsTypes.setStatus}`, value);
         setLocalList(store.state.todoModule.list);
     }
-    function setDoing(value: number): void {}
+    function setDoing(value: number): void {
+        store.dispatch(`todoModule/${MutationsTypes.setDoing}`, value);
+    }
     return { setTodo, setTodoList, removeTodo, setStatus, setDoing };
 }
 

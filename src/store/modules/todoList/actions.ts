@@ -20,4 +20,7 @@ export default {
         // payload: boolean
         commit(MutationsTypes.setStatus, payload);
     },
+    [MutationsTypes.setDoing]({ commit }: ICtx, payload: number): void {
+        commit(MutationsTypes.setDoing, payload);
+    },
 };

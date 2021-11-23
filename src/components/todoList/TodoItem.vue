@@ -2,39 +2,39 @@
   <div>
     <input
       type="checkbox"
-      :checked="item!.status === statusState.FINISHED"
-      @click="setStatus(item!.id)"
-      :class="item!.status === statusState.FINISHED ? 'line-through' : ''"
+      :checked="item.status === statusState.FINISHED"
+      @click="setStatus(item.id)"
     />
-    <span>{{ item!.content }}</span>
-    <button @click="removeTodo(item!.id)">删除</button>
+    <span :class="item.status === statusState.FINISHED ? 'line_through' : ''">{{
+      item.content
+    }}</span>
+    <button @click="removeTodo(item.id)">删除</button>
     <button
-      v-if="item!.status !==statusState.FINISHED"
-      @click="setDoing(item!.id)"
-      :class="item!.status ===statusState.DOING ? 'doing' : 'willdo'"
+      v-if="item.status !== statusState.FINISHED"
+      @click="setDoing(item.id)"
+      :class="item.status === statusState.DOING ? 'doing' : 'willdo'"
     >
-      {{ item!.status ===statusState.DOING ? "正在做" : "马上做" }}
+      {{ item.status === statusState.DOING ? "正在做" : "马上做" }}
     </button>
   </div>
 </template>
 <script setup lang="ts">
-import { PropType, defineProps } from "vue";
 import { ITodo, TODO_STATUS } from "@/store/modules/todoList/interface";
-import { useTodo } from "@/hooks";
 
-defineProps({ item: Object as PropType<ITodo> });
-//const emit = defineEmits(["removeTodo", "setDoing"]);
+defineProps<{ item: ITodo }>();
+
 const emit = defineEmits<{
   (event: "removeTodo", id: number): void;
   (event: "setDoing", id: number): void;
   (event: "setStatus", id: number): void;
 }>();
-//const { setStatus, removeTodo, setDoing } = useTodo();
+
 const statusState = {
   DOING: TODO_STATUS.DOING,
   FINISHED: TODO_STATUS.FINISHED,
   WILLDO: TODO_STATUS.WILLDO,
 };
+
 const removeTodo = (id: number): void => {
   emit("removeTodo", id);
 };
@@ -47,11 +47,11 @@ const setDoing = (id: number): void => {
 </script>
 
 <style scope>
-.line_throuth {
+.line_through {
   text-decoration: line-through;
 }
 .doing {
-  background-color: #cdcdcd;
+  background-color: black;
   color: #ccc;
 }
 .willdo {
